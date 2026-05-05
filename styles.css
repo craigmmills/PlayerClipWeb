@@ -1,0 +1,280 @@
+:root {
+  --bg: #0A0B0D;
+  --volt: #D7FF3E;
+  --text: #FFFFFF;
+  --text-dim: rgba(255, 255, 255, 0.6);
+  --text-body: rgba(255, 255, 255, 0.85);
+  --hairline: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Barlow Condensed', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--volt);
+  color: var(--bg);
+}
+
+/* ───────────────────────── Splash ───────────────────────── */
+
+body.splash main.hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+body.splash main.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(transparent calc(50% - 1px), rgba(215, 255, 62, 0.04) calc(50% - 1px), rgba(215, 255, 62, 0.04) calc(50% + 1px), transparent calc(50% + 1px));
+  pointer-events: none;
+}
+
+.hero-stack {
+  text-align: center;
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.wordmark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 14vw, 11rem);
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.accent-bar {
+  width: 120px;
+  height: 6px;
+  background: var(--volt);
+  margin: 1.75rem auto;
+}
+
+.tagline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  color: var(--volt);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+
+.status {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* ───────────────────────── Footer (shared) ───────────────────────── */
+
+footer {
+  border-top: 1px solid var(--hairline);
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: color 120ms ease;
+}
+
+.footer-nav a:hover {
+  color: var(--volt);
+}
+
+.footer-copy {
+  color: var(--text-dim);
+  font-size: 0.875rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* ───────────────────────── Document pages ───────────────────────── */
+
+body.doc {
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.doc-header {
+  border-bottom: 1px solid var(--hairline);
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doc-header .logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.doc-header .logo:hover {
+  color: var(--volt);
+}
+
+.doc-header .home-link {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.doc-header .home-link:hover {
+  color: var(--volt);
+}
+
+main.doc-content {
+  flex: 1;
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.doc-content h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.doc-content .doc-subtitle {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 3rem;
+}
+
+.doc-content h2 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--volt);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.doc-content p,
+.doc-content ul {
+  margin-bottom: 1rem;
+  color: var(--text-body);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.doc-content ul {
+  padding-left: 1.5rem;
+}
+
+.doc-content li {
+  margin-bottom: 0.5rem;
+}
+
+.doc-content strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.doc-content a {
+  color: var(--volt);
+  text-decoration: none;
+  border-bottom: 1px solid var(--volt);
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.doc-content a:hover {
+  background: var(--volt);
+  color: var(--bg);
+}
+
+.last-updated {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--hairline);
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@media (max-width: 640px) {
+  .doc-header {
+    padding: 1rem 1.25rem;
+  }
+  main.doc-content {
+    padding: 2rem 1.25rem;
+  }
+  footer {
+    padding: 1.25rem;
+  }
+  .footer-nav {
+    gap: 1.5rem;
+  }
+}
